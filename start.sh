@@ -15,7 +15,6 @@ if [ ! -d "venv" ]; then
 fi
 source venv/bin/activate
 echo "Installing pip requirements..."
-pip install -r requirements.txt
 
 # 2. Setup Frontend
 echo "[2/4] Setting up Next.js frontend..."
