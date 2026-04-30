@@ -3,16 +3,12 @@
 > A Geopolitical Trading Dashboard — Turning Alternative Data into Live Market Signals.
 
 **Live demo:** https://alternativefinance.vercel.app
-**API:** https://alternative-finance.onrender.com
-**API docs (Swagger):** https://alternative-finance.onrender.com/docs
 
 ---
 
 ## Overview
 
 WarSignals is an end-to-end trading dashboard that ingests **alternative, non-financial data** (geopolitical events, satellite imagery, civil aviation tracks) and turns it into actionable signals on financial markets. The system is anchored in the **Alternative Finance** curriculum (Master 203, Université Paris-Dauphine – PSL), and operationalises the Hayekian view of prices as information aggregators, the Grossman–Stiglitz paradox, and the Kyle microstructure framework.
-
-The full architecture, signal formulas and academic motivation are documented in [`WarSignals_Report.pdf`](./WarSignals_Report.pdf).
 
 ## What it does
 
