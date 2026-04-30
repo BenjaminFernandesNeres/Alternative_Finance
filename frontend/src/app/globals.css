@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  min-width: max-content;
+}
+
+.animate-marquee-slow {
+  animation: marquee 45s linear infinite;
+  min-width: max-content;
+}
+
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-left-slow {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track-fast { animation: marquee-left 35s linear infinite; }
+.marquee-track-fast:hover { animation-play-state: paused; }
+.marquee-track-slow { animation: marquee-left-slow 60s linear infinite; }
+.marquee-track-slow:hover { animation-play-state: paused; }
+
+/* ── Custom Scrollbars ─────────────────────────────────────────────── */
+
+/* Thin vertical scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(82, 82, 91, 0.5) transparent;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(82, 82, 91, 0.5);
+  border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(113, 113, 122, 0.8);
+}
+
+/* Horizontal scrollbar for signal carousel */
+.scroll-x-panel {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(82, 82, 91, 0.4) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+.scroll-x-panel::-webkit-scrollbar {
+  height: 4px;
+}
+.scroll-x-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-x-panel::-webkit-scrollbar-thumb {
+  background: rgba(82, 82, 91, 0.4);
+  border-radius: 999px;
+}
+.scroll-x-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(113, 113, 122, 0.7);
+}
+
+/* Fade masks for horizontal scroll container */
+.scroll-fade-x {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+/* Fade mask for bottom of vertical scroll panels */
+.scroll-fade-bottom {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+/* Panel height constraints */
+.panel-scroll {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(82, 82, 91, 0.4) transparent;
+}
+.panel-scroll::-webkit-scrollbar {
+  width: 3px;
+}
+.panel-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.panel-scroll::-webkit-scrollbar-thumb {
+  background: rgba(82, 82, 91, 0.4);
+  border-radius: 999px;
+}
