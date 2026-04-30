@@ -56,7 +56,9 @@ cd "$PROJECT_ROOT/backend"
 source venv/bin/activate
 export PYTHONPATH="$PROJECT_ROOT/backend"
 echo "Starting FastAPI on port 8000..."
-uvicorn app.main:app --reload --port 8000 &
+uvicorn app.main:app --host 0.0.0.0 --port $PORT
+
+
 BACKEND_PID=$!
 
 # Start Frontend
